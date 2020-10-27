@@ -1,0 +1,25 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    assignees:
+      - "rossyman"
+    reviewers:
+      - "rossyman"
+    commit-message:
+      prefix: "THRET-D"
+      include: "scope"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    assignees:
+      - "rossyman"
+    reviewers:
+      - "rossyman"
+    commit-message:
+      prefix: "THRET-D"
+      include: "scope"
