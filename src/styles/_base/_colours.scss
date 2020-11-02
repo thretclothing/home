@@ -1,0 +1,12 @@
+$colours: (
+  white: #fff,
+  black: #000,
+  rich_black: #01000a,
+  dark_purple: #1a1922,
+  mild_grey: #808085,
+  dark_grey: #221f20
+);
+
+@function get-colour($name) {
+  @return map_get($colours, $name);
+}

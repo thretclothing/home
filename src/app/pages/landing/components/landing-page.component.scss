@@ -1,0 +1,59 @@
+@use '../../../../styles/_base/colours';
+
+:host {
+  display: flex;
+  height: 100%;
+}
+
+.side-image {
+  width: 50%;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    width: 320%;
+    height: 320%;
+    position: absolute;
+    top: -140%;
+    left: -100%;
+    z-index: -1;
+    background: url('../../../../assets/images/branding/thret-logo-horz-warped-pattern.png') 0 0 repeat;
+    transform: rotate(-30deg);
+  }
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background-color: colours.get-colour(white);
+
+  @media (max-width: 900px) {
+    width: 100%;
+  }
+}
+
+main {
+  flex-grow: 1;
+  max-width: 680px;
+  padding: 3rem;
+  line-height: 2rem;
+  color: colours.get-colour(dark_grey);
+
+  & p:not(:last-of-type) {
+    padding-bottom: 1.75rem;
+  }
+}
+
+.logo {
+  max-width: 120px;
+  margin: -1rem 0 0 -1rem;
+}
