@@ -8,16 +8,22 @@
   "bugs": "https://github.com/thretclothing/home/issues",
   "author": "Thret Clothing Co & Contributers (https://github.com/thretclothing/home/graphs/contributors)",
   "scripts": {
-    "start": "ng serve",
-    "start:prod": "ng serve --prod",
+    "start": "npm run serve:ssr",
+    "serve": "ng serve",
+    "serve:prod": "ng serve --prod",
+    "serve:ssr": "node dist/thret/server/main.js",
     "build": "ng build",
     "build:prod": "ng build --prod",
+    "build:ssr": "ng build --prod && ng run thret:server:production",
     "test": "ng test",
     "test:watch": "ng test --watch",
     "test:headless": "ng test -c=headless",
     "test:headless:watch": "ng test -c=headless --watch",
     "lint": "ng lint",
-    "postinstall": "ngcc --tsconfig='./config/ts/tsconfig.app.json'"
+    "postinstall": "ngcc --tsconfig='./config/ts/tsconfig.app.json'",
+    "heroku-postbuild": "ngcc --tsconfig='./config/ts/tsconfig.server.json' && npm run build:ssr",
+    "dev:ssr": "ng run thret:serve-ssr",
+    "prerender": "ng run thret:prerender"
   },
   "dependencies": {
     "@angular/animations": "~10.2.0",
@@ -27,19 +33,25 @@
     "@angular/forms": "~10.2.0",
     "@angular/platform-browser": "~10.2.0",
     "@angular/platform-browser-dynamic": "~10.2.0",
+    "@angular/platform-server": "~10.2.0",
     "@angular/router": "~10.2.0",
-    "@fortawesome/angular-fontawesome": "~0.7.0",
-    "@fortawesome/fontawesome-svg-core": "^1.2.28",
-    "@fortawesome/free-brands-svg-icons": "^5.13.0",
-    "luxon": "^1.25.0",
-    "rxjs": "~6.6.0",
-    "tslib": "^2.0.0",
-    "zone.js": "~0.10.2"
-  },
-  "devDependencies": {
     "@angular-devkit/build-angular": "~0.1002.0",
     "@angular/cli": "~10.2.0",
     "@angular/compiler-cli": "~10.2.0",
+    "@nguniversal/builders": "^10.1.0",
+    "@fortawesome/angular-fontawesome": "~0.7.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-brands-svg-icons": "^5.13.0",
+    "@nguniversal/express-engine": "^10.1.0",
+    "express": "^4.15.2",
+    "luxon": "^1.25.0",
+    "rxjs": "~6.6.0",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.10.2",
+    "typescript": "~4.0.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.0",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/luxon": "^1.25.0",
@@ -54,7 +66,6 @@
     "karma-jasmine-html-reporter": "^1.5.0",
     "protractor": "~7.0.0",
     "ts-node": "~9.0.0",
-    "tslint": "~6.1.0",
-    "typescript": "~4.0.2"
+    "tslint": "~6.1.0"
   }
 }
