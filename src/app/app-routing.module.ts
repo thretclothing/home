@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [];
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot([{
+    path: '',
+    pathMatch: 'full',
+    loadChildren: () => import('./pages/landing/landing-page.module').then(m => m.LandingPageModule)
+  }, {
+    path: '**',
+    redirectTo: ''
+  }])],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
