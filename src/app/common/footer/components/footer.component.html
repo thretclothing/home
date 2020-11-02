@@ -1,0 +1,38 @@
+<footer>
+  <div>
+    <img class="logo"
+         src="{{ 'thret-logo-horz.svg' | assets: 'images' : 'branding' }}"
+         alt="Thret Clothing Co.">
+
+    <p class="tagline">UK based skate and streetwear clothing brand 🛹 🏷</p>
+
+    <p>Made with  ❤️  in a very un-United Kingdom  😎</p>
+  </div>
+
+  <div>
+    <b>Contact Us</b>
+
+    <p>General Enquiries hello@thretclothing.com</p>
+  </div>
+
+  <div>
+
+    <b>Follow</b>
+
+    <ul class="social-links">
+      <li class="social-link" *ngFor="let SOCIAL_LINK of SOCIAL_LINKS">
+
+        <a href="{{ SOCIAL_LINK.location }}"
+           title="Thret Clothing on {{ SOCIAL_LINK.serviceName }}">
+
+          <fa-icon class="social-link__icon" [icon]="SOCIAL_LINK.icon"></fa-icon>
+          <span class="social-link__label">{{ SOCIAL_LINK.handle }}</span>
+        </a>
+
+      </li>
+    </ul>
+
+  </div>
+</footer>
+
+<div class="copyright"><p>&copy; {{ getCopyrightYear() }} - Thret Clothing Co & Team</p></div>

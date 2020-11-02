@@ -1,0 +1,73 @@
+@use '../../../../styles/_base/colours';
+
+:host {
+  display: block;
+}
+
+footer {
+
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  padding: 3rem;
+
+  font-weight: 300;
+  line-height: 1.75rem;
+  background-color: colours.get-colour(rich_black);
+  color: colours.get-colour(mild_grey);
+
+  @media (max-width: 1630px) {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+
+  & > div {
+    padding: 0 1rem;
+  }
+
+  & b {
+    color: colours.get-colour(white);
+  }
+}
+
+.logo {
+  max-width: 150px;
+}
+
+.tagline {
+  max-width: 250px;
+  margin-bottom: 2rem;
+}
+
+.social-links {
+  margin: 1rem 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social-link {
+
+  & a {
+    text-decoration: none;
+    color: colours.get-colour(mild_grey);
+  }
+
+  &__icon {
+    vertical-align: middle;
+    color: colours.get-colour(white);
+  }
+
+  &__label {
+    margin-left: 1rem;
+  }
+}
+
+.copyright {
+  padding: .75rem 4rem;
+  font-size: .9rem;
+  background-color: colours.get-colour(dark_purple);
+
+  & p {
+    margin: 0;
+    color: colours.get-colour(white);
+  }
+}

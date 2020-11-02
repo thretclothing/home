@@ -28,6 +28,7 @@
  * 3. Change the default tap highlight to be completely transparent in iOS.
  * 4. Apply anti-aliasing on text to all elements.
  * 5. Apply font kerning.
+ * 6. Ensure the body takes up as much space as possible.
  */
 
 html {
@@ -41,6 +42,7 @@ html {
   -webkit-font-feature-settings: 'kern'; /* 5 */
   -moz-font-feature-settings: 'kern'; /* 5 */
   -moz-font-feature-settings: 'kern=1'; /* 5 */
+  height: 100%; /* 6 */
 }
 
 /* Sections
@@ -50,13 +52,15 @@ html {
  * 1. Remove the margin in all browsers.
  * 2. As a best practice, apply a default `background-color`.
  * 3. Set the default system font stack
+ * 4. Ensure the body takes up as much space as possible.
  */
 
 body {
   margin: 0; /* 1 */
   font-size: typography.$font-size;
-  background-color: colours.get-colour(white); /* 2 */
+  background-color: colours.get-colour(dark_grey); /* 2 */
   font-family: typography.$font-family; /* 3 */
+  height: 100%; /* 4 */
 }
 
 /**
@@ -129,7 +133,7 @@ abbr[title] {
 
 b,
 strong {
-  font-weight: bolder;
+  font-weight: bold;
 }
 
 /**
