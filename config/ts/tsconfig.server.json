@@ -10,7 +10,8 @@
   },
   "files": [
     "../../src/main.server.ts",
-    "../../server.ts"
+    "../../server.ts",
+    "../../src/types/twemoji.d.ts"
   ],
   "angularCompilerOptions": {
     "entryModule": "../../src/app/app.server.module#AppServerModule"
