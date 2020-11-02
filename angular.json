@@ -37,7 +37,9 @@
             "styles": [
               "src/styles/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/twemoji/dist/twemoji.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -102,7 +104,9 @@
             "styles": [
               "src/styles/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/twemoji/dist/twemoji.min.js"
+            ]
           },
           "configurations": {
             "headless": {
