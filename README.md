@@ -50,15 +50,17 @@ After the dependency installation has completed, you'll be able to use the NPM c
 
 ### Running The Site
 
-There are two ways in which you can launch the site:
-- In dev mode, which is what is used when working on the site: `npm run start`
-- In prod mode, which resembles the live site: `npm run start:prod`
+There are three ways in which you can launch the site:
+- In dev mode, which is what is used when working on the site: `npm run serve`
+- In prod mode, which resembles the live site: `npm run serve:prod`
+- In SSR mode, with the prod version of the site built, this will simulate what's ran on our server: `npm run serve:ssr`
 
 ### Building The Site
 
-There are two ways in which you can build the site, similarly to points above:
+There are three ways in which you can build the site, similarly to points above:
 - In dev mode, which should only be used in testing environments: `npm run build`
-- In prod mode, which is ultimately what is packaged and delivered to web-clients: `npm run build:prod`
+- In prod mode, which is ultimately the code that is delivered to the client: `npm run build:prod`
+- In SSR mode, which is ultimately what is packaged and delivered to servers: `npm run build:ssr`
 
 ### Testing The Site
 
