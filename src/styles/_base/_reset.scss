@@ -58,7 +58,7 @@ html {
 body {
   margin: 0; /* 1 */
   font-size: typography.$font-size;
-  background-color: colours.get-colour(dark_grey); /* 2 */
+  background-color: colours.get-colour(white); /* 2 */
   font-family: typography.$font-family; /* 3 */
   height: 100%; /* 4 */
 }

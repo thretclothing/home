@@ -1,7 +1,7 @@
-declare var twemoji: {
+declare let twemoji: {
   parse(
     icon: string,
-    callback: (icon: string, options: {
+    callback: (iconName: string, options: {
       className: string;
       base: string;
       size: string;
