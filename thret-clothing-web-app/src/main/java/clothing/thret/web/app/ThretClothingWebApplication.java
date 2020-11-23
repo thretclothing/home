@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ThretClothingWebAppApplication {
+public class ThretClothingWebApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ThretClothingWebAppApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(ThretClothingWebApplication.class, args);
+  }
 }
