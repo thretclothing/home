@@ -6,7 +6,8 @@ on:
       - develop
 
 jobs:
-  build:
+  web_ui:
+    name: UI Hygiene Checks
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -18,17 +19,54 @@ jobs:
       - name: Cache node modules
         uses: actions/cache@v2.1.3
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package.json') }}
+          path: |
+            ~/.npm
+            **/node_modules
           restore-keys: |
             ${{ runner.os }}-node-
-      - name: Node ${{ matrix.node-version }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package.json') }}
+
+      - name: Setup Node ${{ matrix.node-version }}
         uses: actions/setup-node@v2.1.2
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Hygiene Checks
-        run: |
-          npm i
-          npm run lint
-          npm run test:headless
+      - name: Install Dependencies
+        working-directory: thret-clothing-web-ui
+        run: npm i
+
+      - name: Lint project
+        working-directory: thret-clothing-web-ui
+        run: npm run lint
+
+      - name: Test project
+        working-directory: thret-clothing-web-ui
+        run: npm run test:headless
+
+  web_app:
+    name: Backend Hygiene Checks
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java-version: [11]
+
+    steps:
+      - uses: actions/checkout@v2.3.4
+
+      - name: Set up Java ${{ matrix.java-version }}
+        uses: actions/setup-java@v1
+        with:
+          java-version: ${{ matrix.java-version }}
+
+      - name: Cache Maven packages
+        uses: actions/cache@v2.1.3
+        with:
+          path: |
+            ~/.m2
+          restore-keys: |
+            ${{ runner.os }}-maven
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+
+      - name: Test project
+        working-directory: thret-clothing-web-app
+        run: mvn clean test
