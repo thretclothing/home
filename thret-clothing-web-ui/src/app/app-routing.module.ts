@@ -9,9 +9,7 @@ import { RouterModule } from '@angular/router';
   }, {
     path: '**',
     redirectTo: ''
-  }], {
-    initialNavigation: 'enabled'
-  })],
+  }])],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
