@@ -20,8 +20,18 @@ footer {
     grid-template-rows: auto;
   }
 
-  & > div {
-    padding: 0 1rem;
+  @media (min-width: 1630px) {
+    & > div {
+      padding: 0 1rem;
+
+      &:first-of-type {
+        padding: 0 1rem 0 0;
+      }
+
+      &:last-of-type {
+        padding: 0 0 0 1rem;
+      }
+    }
   }
 
   & b {
