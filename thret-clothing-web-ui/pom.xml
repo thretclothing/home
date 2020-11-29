@@ -14,7 +14,7 @@
   <artifactId>thret-clothing-web-ui</artifactId>
 
   <properties>
-    <frontend.plugin.version>1.10.3</frontend.plugin.version>
+    <frontend.plugin.version>1.10.4</frontend.plugin.version>
     <frontend.node.version>14.15.1</frontend.node.version>
   </properties>
 
