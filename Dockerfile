@@ -1,13 +1,13 @@
 FROM node:14-slim as buildContainer
-WORKDIR /app
-COPY ./package.json ./package-lock.json /app/
+WORKDIR /usr/src/app
+COPY package*.json ./
 RUN npm install
-COPY . /app
+COPY . ./
 RUN npm run build:ssr
 
 FROM node:14-slim
-WORKDIR /app
-COPY --from=buildContainer /app/package.json /app
-COPY --from=buildContainer /app/dist /app/dist
+WORKDIR /usr/src/app
+COPY --from=buildContainer /usr/src/app/package*.json ./
+COPY --from=buildContainer /usr/src/app/dist ./
 EXPOSE 8080
 CMD ["npm", "run", "serve:ssr"]
