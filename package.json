@@ -41,7 +41,6 @@
     "luxon": "1.25.0",
     "rxjs": "6.6.3",
     "tslib": "2.0.3",
-    "twemoji": "13.0.1",
     "zone.js": "0.10.3"
   },
   "devDependencies": {
@@ -69,11 +68,11 @@
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.8",
     "eslint-plugin-prefer-arrow": "1.2.2",
-    "@angular-eslint/builder": "0.8.0-beta.2",
+    "@angular-eslint/builder": "0.8.0-beta.3",
     "@angular-eslint/eslint-plugin": "0.8.0-beta.2",
     "@angular-eslint/eslint-plugin-template": "0.8.0-beta.2",
     "@angular-eslint/schematics": "^0.8.0-beta.1",
-    "@angular-eslint/template-parser": "0.8.0-beta.2",
+    "@angular-eslint/template-parser": "0.8.0-beta.3",
     "@typescript-eslint/eslint-plugin": "4.8.2",
     "@typescript-eslint/parser": "4.8.2"
   }
