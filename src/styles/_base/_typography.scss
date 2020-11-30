@@ -7,5 +7,14 @@ $font-family: -apple-system,
               'Apple Color Emoji',
               'Segoe UI Emoji';
 
+$emoji-font-family: 'Apple Color Emoji',
+                    'Segoe UI Emoji',
+                    'Noto Color Emoji',
+                    'Android Emoji',
+                    'Emojisymbols',
+                    'Emojione Mozilla',
+                    'Twemoji Mozilla',
+                    'Segoe UI Symbol';
+
 $font-size: 1rem;
 $font-line-height: 1.15;

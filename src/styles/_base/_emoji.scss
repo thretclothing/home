@@ -1,0 +1,5 @@
+@use 'typography';
+
+.emoji {
+  font-family: typography.$emoji-font-family;
+}
