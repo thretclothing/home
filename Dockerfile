@@ -1,13 +1,16 @@
 FROM node:14-slim as buildContainer
-WORKDIR /usr/src/app
-COPY package*.json ./
+WORKDIR /app
+COPY package*.json /app
 RUN npm install
-COPY . ./
+COPY . /app
 RUN npm run build:ssr
 
 FROM node:14-slim
-WORKDIR /usr/src/app
-COPY --from=buildContainer /usr/src/app/package*.json ./
-COPY --from=buildContainer /usr/src/app/dist ./
+WORKDIR /app
+COPY --from=buildContainer /app/package*.json /app
+COPY --from=buildContainer /app/dist /app/dist
+
 EXPOSE 8080
+
+ENV NODE_ENV production
 CMD ["npm", "run", "serve:ssr"]
