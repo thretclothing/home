@@ -39,3 +39,6 @@ jobs:
 
       - name: Test project
         run: npm run test:headless
+
+      - name: Build SSR
+        run: npm run build:ssr
