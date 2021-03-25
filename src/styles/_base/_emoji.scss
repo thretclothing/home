@@ -1,5 +1,7 @@
 @use 'typography';
 
 .emoji {
+  display: inline-block;
+  min-width: typography.$font-size + .35;
   font-family: typography.$emoji-font-family;
 }
