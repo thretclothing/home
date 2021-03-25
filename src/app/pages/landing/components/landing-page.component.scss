@@ -21,7 +21,7 @@
     top: -140%;
     left: -100%;
     z-index: -1;
-    background: url('../../../../assets/images/branding/thret-logo-horz-warped-pattern.png') 0 0 repeat;
+    background: url('../../../../assets/images/branding/thret-logo-horz-warped-pattern.webp') 0 0 repeat;
     transform: rotate(-30deg);
   }
 
@@ -54,6 +54,8 @@ main {
 }
 
 .logo {
+  width: auto;
   max-width: 120px;
+  height: auto;
   margin: -1rem 0 0 -1rem;
 }
