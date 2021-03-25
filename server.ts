@@ -20,6 +20,11 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', distFolder);
 
+  server.use((req, res, next) => {
+    console.log(`${req.method} request for: ${req.originalUrl}, by resolved IP Address: ${req.get('CF-Connecting-IP') || 'N/A'}`);
+    next();
+  });
+
   /**
    * Forward all requests for assets to the static dist folder
    */
@@ -31,13 +36,6 @@ export function app(): express.Express {
    * Catch all other requests and route to the Universal engine
    */
   server.get('*', (req, res) => {
-
-    const cloudflareHeader = req.header('CF-Connecting-IP');
-
-    if (cloudflareHeader) {
-      console.log(`${req.method} request for: ${req.originalUrl}, by resolved IP Address: ${cloudflareHeader}`);
-    }
-
     res.render(indexHtml, {req, providers: [{provide: APP_BASE_HREF, useValue: req.baseUrl}]});
   });
 
