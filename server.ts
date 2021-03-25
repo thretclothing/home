@@ -31,13 +31,7 @@ export function app(): express.Express {
    * Catch all other requests and route to the Universal engine
    */
   server.get('*', (req, res) => {
-
-    const cloudflareHeader = req.header('CF-Connecting-IP');
-
-    if (cloudflareHeader) {
-      console.log(`${req.method} request for: ${req.originalUrl}, by resolved IP Address: ${cloudflareHeader}`);
-    }
-
+    console.log(`${req.method} request for: ${req.originalUrl}, by resolved IP Address: ${req.get('CF-Connecting-IP') || 'N/A'}`);
     res.render(indexHtml, {req, providers: [{provide: APP_BASE_HREF, useValue: req.baseUrl}]});
   });
 
