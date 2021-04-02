@@ -30,7 +30,7 @@ The website was written using TypeScript v4, Angular v11 and a whole host of oth
 ## Firing It Up (🔥↑)
 
 To run, test or build the website locally, you'll need to have a few things installed:
- - [x] Node.js (LTS - v12) - [Get it here](https://nodejs.org/)
+ - [x] Node.js (LTS - v14) - [Get it here](https://nodejs.org/)
  - [x] NPM (Bundled with Node.js)
  
 Once you've installed Node.js, you'll need to checkout the repository:
@@ -51,9 +51,9 @@ After the dependency installation has completed, you'll be able to use the NPM c
 ### Running The Site
 
 There are three ways in which you can launch the site:
-- In dev mode, which is what is used when working on the site: `npm run serve`
-- In prod mode, which resembles the live site: `npm run serve:prod`
-- In SSR mode, with the prod version of the site built, this will simulate what's ran on our server: `npm run serve:ssr`
+- In dev mode, which is what is used when working on the site: `npm run start`
+- In prod mode, which resembles the live site: `npm run start:prod`
+- In SSR mode, with the prod version of the site built, this will simulate what's ran on our server: `npm run start:ssr`
 
 ### Building The Site
 
