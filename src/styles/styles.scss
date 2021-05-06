@@ -5,3 +5,9 @@
 /* Base Styles */
 @import '_base/reset';
 @import '_base/emoji';
+
+.logo {
+  max-width: 150px;
+  width: auto;
+  height: auto;
+}

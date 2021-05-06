@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FooterSocialLink } from '../interfaces/footer-social-link';
 import { faFacebook, faGithub, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { DateService } from '../../../providers/date.service';
+import { DateService } from '../../../providers/services/date.service';
 
 @Component({
   selector: 'thret-footer',

@@ -32,12 +32,15 @@
             "assets": [
               "src/favicon.ico",
               "src/robots.txt",
-              "src/assets"
+              "src/assets",
+              "src/policies"
             ],
             "styles": [
               "src/styles/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/marked/lib/marked.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -96,7 +99,8 @@
             "assets": [
               "src/favicon.ico",
               "src/robots.txt",
-              "src/assets"
+              "src/assets",
+              "src/policies"
             ],
             "styles": [
               "src/styles/styles.scss"

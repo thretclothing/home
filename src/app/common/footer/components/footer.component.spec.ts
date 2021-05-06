@@ -1,5 +1,5 @@
 import { FooterComponent } from './footer.component';
-import { DateService } from '../../../providers/date.service';
+import { DateService } from '../../../providers/services/date.service';
 
 describe('FooterComponent', () => {
 
