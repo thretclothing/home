@@ -1,40 +1,66 @@
 <footer>
-  <div>
-    <img class="logo"
-         width="150px"
-         height="22px"
-         src="{{ 'thret-logo-horz.svg' | assets: 'images' : 'branding' }}"
-         alt="Thret Clothing Co.">
-
-    <p class="tagline">UK based skate and streetwear clothing brand <span class="emoji">🛹 🏷</span></p>
-
-    <p>Made with <span class="emoji">❤️</span> in a very un-United Kingdom <span class="emoji">😎</span></p>
-  </div>
-
-  <div>
-    <b>Contact Us</b>
-
-    <p>General Enquiries hello@thretclothing.com</p>
-  </div>
-
-  <div>
-
-    <b>Follow</b>
-
-    <ul class="social-links">
-      <li class="social-link" *ngFor="let SOCIAL_LINK of SOCIAL_LINKS">
-
-        <a href="{{ SOCIAL_LINK.location }}"
-           title="Thret Clothing on {{ SOCIAL_LINK.serviceName }}">
-
-          <fa-icon class="social-link__icon" [icon]="SOCIAL_LINK.icon"></fa-icon>
-          <span class="social-link__label">{{ SOCIAL_LINK.handle }}</span>
-        </a>
-
-      </li>
-    </ul>
-
+  <div class="bx--grid">
+    <div class="bx--row">
+      <div class="bx--col box--col-md-2">
+        <ul>
+          <li *ngFor="let SOCIAL_LINK of SOCIAL_LINKS">
+            <a [href]="SOCIAL_LINK.location"
+               title="Thret Clothing on {{ SOCIAL_LINK.serviceName }}">
+              <span class="social-link__label">{{ SOCIAL_LINK.serviceName }}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="bx--col box--col-md-2">2 of 4</div>
+      <div class="bx--offset-lg-2 bx--col-sm-3 bx--col-md-4 bx--col-lg-4">
+        <p>Have questions? Email us at <a href="mailto:hello@thretclothing.com" title="Email us your questions">hello@thretclothing.com</a></p>
+      </div>
+    </div>
+    <div class="bx--row">
+      <div class="bx--col-md-2">
+        <img class="logo"
+             width="150px"
+             height="22px"
+             src="{{ 'thret-logo-horz.svg' | assets: 'images' : 'branding' }}"
+             alt="Thret Clothing Co.">
+      </div>
+    </div>
   </div>
 </footer>
 
-<div class="copyright"><p>&copy; {{ getCopyrightYear() }} - Thret Clothing Co & Team</p></div>
+<!--<footer>-->
+
+<!--  <div>-->
+
+
+<!--    <p class="tagline">UK based skate and streetwear clothing brand <span class="emoji">🛹 🏷</span></p>-->
+
+<!--    <p>Made with <span class="emoji">❤️</span> in a very un-United Kingdom <span class="emoji">😎</span></p>-->
+<!--  </div>-->
+
+<!--  <div>-->
+<!--    <b>Contact Us</b>-->
+
+<!--    <p>General Enquiries hello@thretclothing.com</p>-->
+<!--  </div>-->
+
+<!--  <div>-->
+
+<!--    <b>Follow</b>-->
+
+<!--    <ul class="social-links">-->
+<!--      <li class="social-link" *ngFor="let SOCIAL_LINK of SOCIAL_LINKS">-->
+
+<!--        <a href="{{ SOCIAL_LINK.location }}"-->
+<!--           title="Thret Clothing on {{ SOCIAL_LINK.serviceName }}">-->
+
+
+<!--        </a>-->
+
+<!--      </li>-->
+<!--    </ul>-->
+
+<!--  </div>-->
+<!--</footer>-->
+
+<!--<div class="copyright"><p>&copy; {{ getCopyrightYear() }} - Thret Clothing Co & Team</p></div>-->

@@ -5,38 +5,8 @@
 }
 
 footer {
-
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  padding: 3rem;
-
-  font-weight: 300;
-  line-height: 1.75rem;
   background-color: colours.get-colour(rich_black);
   color: colours.get-colour(mild_grey);
-
-  @media (max-width: 1630px) {
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-  }
-
-  @media (min-width: 1630px) {
-    & > div {
-      padding: 0 1rem;
-
-      &:first-of-type {
-        padding: 0 1rem 0 0;
-      }
-
-      &:last-of-type {
-        padding: 0 0 0 1rem;
-      }
-    }
-  }
-
-  & b {
-    color: colours.get-colour(white);
-  }
 }
 
 .logo {
